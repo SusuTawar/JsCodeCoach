@@ -27,6 +27,7 @@
           challenge.filename
             .slice(0, challenge.filename.lastIndexOf("."))
             .replace(/_/g, " ")
+            .replace(/(^[a-z]|\s([a-z]))/g, (l) => l.toUpperCase())
         );
         selectChallenges.appendChild(option);
       }
@@ -95,16 +96,16 @@
 
     selectChallenges.addEventListener("change", async (e) => {
       if (!challenges) return;
-			if(Number(e.target.value) < 0){
-				ch = {};
-      placeAll(".cr-title", "innerText", "Not Available");
-      placeAll(".cr-desc", "innerText", "Not Available");
-      placeAll(".cr-task", "innerText", "Not Available");
-      placeAll(".cr-inp", "innerText", "Not Available");
-      placeAll(".cr-out", "innerText", "Not Available");
-      placeAll(".cr-example", "innerText", "Not Available");
-				return;
-			}
+      if (Number(e.target.value) < 0) {
+        ch = {};
+        placeAll(".cr-title", "innerText", "Not Available");
+        placeAll(".cr-desc", "innerText", "Not Available");
+        placeAll(".cr-task", "innerText", "Not Available");
+        placeAll(".cr-inp", "innerText", "Not Available");
+        placeAll(".cr-out", "innerText", "Not Available");
+        placeAll(".cr-example", "innerText", "Not Available");
+        return;
+      }
       cha = challenges.find((v) => v.id == e.target.value);
       const req = await axios({
         method: "GET",
@@ -175,7 +176,9 @@
               }
             );
             if (res.status < 400) {
-              const d = atob(res.data.content).split(/(\r|\n|\r\n)/).filter(t=>/[^\s]+/.test(t));
+              const d = atob(res.data.content)
+                .split(/(\r|\n|\r\n)/)
+                .filter((t) => /[^\s]+/.test(t));
               const tests = [];
               for (let j = 0; j < d.length; j += 2) {
                 const test = {};

@@ -168,3 +168,6 @@ article > * {
   max-height: 75vh;
 }
 
+#sl-ch {
+  border-bottom: var(--clr-prm) 1px solid;
+}
