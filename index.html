@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Coach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mocha@8.0.1/mocha.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prettier@2.0.5/standalone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prettier@2.0.5/parser-babel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chai@4.2.0/chai.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mocha@8.0.1/mocha.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.0.12/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
+  <body>
+    <main>
+      <section class="active" id="s-info">
+        <h1>JS Code Coach</h1>
+        <div class="card-solo">
+          <select id="sl-ch">
+            <option>
+              loading ...
+            </option>
+          </select>
+          <button>Select</button>
+        </div>
+        <article>
+          <div class="card c-title">
+            <h1>Title</h1>
+            <div class="cr-title">
+              Not Available
+            </div>
+          </div>
+          <div class="card c-desc">
+            <h1>Description</h1>
+            <div class="cr-desc">
+              Not Available
+            </div>
+          </div>
+          <div class="card c-task">
+            <h1>Task</h1>
+            <div class="cr-task">
+              Not Available
+            </div>
+          </div>
+          <div class="card c-inp">
+            <h1>Input</h1>
+            <div class="cr-inp">
+              Not Available
+            </div>
+          </div>
+          <div class="card c-out">
+            <h1>Output</h1>
+            <div class="cr-out">
+              Not Available
+            </div>
+          </div>
+          <div class="card c-example">
+            <h1>Example</h1>
+            <div class="cr-example">
+              Not Available
+            </div>
+          </div>
+        </article>
+      </section>
+      <section id="s-code">
+        <h1 class="c-title">Placeholder</h1>
+        <article>
+          <div class="card fill-h">
+            <h1>Code Here</h1>
+            <div class="editor">
+              <pre><code class="javascript" contenteditable="true">function fun(a){
+    return a
+}</code></pre>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section id="s-run">
+        <h1 class="cr-title">Result</h1>
+        <article></article>
+      </section>
+    </main>
+    <nav>
+      <button data-section="#s-info" class="active">
+        <span class="material-icons">info</span>
+      </button>
+      <button data-section="#s-code">
+        <span class="material-icons">code</span>
+      </button>
+      <button id="b-run" data-section="#s-run" class="inactive">
+        <span class="material-icons">play_arrow</span>
+      </button>
+    </nav>
+    <script id="uscript"></script>
+  </body>
+</html>

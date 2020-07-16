@@ -1,0 +1,170 @@
+:root {
+  --clr-prm: #212121;
+  --clr-prm-light: #484848;
+  --clr-prm-dark: #000;
+  --clr-scd: #ccff90;
+  --clr-scd-light: #ffffc2;
+  --clr-scd-dark: #99cc60;
+  --on-prm: #fff;
+  --on-scd: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-prm);
+  height: 100vh;
+}
+
+button,
+input,
+select {
+  border: none;
+}
+
+main,
+nav {
+  width: 100%;
+}
+
+main {
+  flex: 1;
+  overflow-y: hidden;
+  position: relative;
+}
+
+section {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  transition: all 0.5s ease;
+  transform: translateX(-100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+section.active {
+  transform: translateX(0);
+}
+
+nav {
+  display: flex;
+}
+
+nav button {
+  flex: 1;
+  height: 50px;
+  color: var(--on-prm);
+  background-color: var(--clr-prm-light);
+  width: 0;
+  transition: all 0.5s ease;
+}
+
+nav button.active {
+  background-color: var(--clr-scd-dark);
+  color: var(--on-scd);
+}
+
+nav button.inactive {
+  display: none;
+}
+
+nav button:focus,
+nav button:hover,
+nav button:active {
+  outline: none;
+}
+
+section > h1 {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-prm);
+  background-color: var(--clr-prm-dark);
+}
+
+article {
+  /*flex: 1;*/
+  width: 100%;
+  color: var(--on-prm);
+  background-color: var(--clr-prm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+article > * {
+  margin: 0.5rem;
+  width: 80%;
+  max-width: 400px;
+}
+
+.card-solo {
+  display: flex;
+  width: 100%;
+}
+
+.card-solo select {
+  flex: 1;
+  background: var(--on-prm);
+}
+
+.card-solo button {
+  color: var(--on-prm);
+  background-color: var(--clr-prm-light);
+  padding: 0 0.25em;
+}
+
+.card {
+  background-color: var(--on-prm);
+  color: var(--clr-prm);
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card.fill-h {
+  flex: 1 1 1;
+  width: 100%;
+}
+
+.card > h1 {
+  background-color: var(--clr-scd);
+}
+
+.card.red > h1 {
+  background-color: #ffcc90;
+}
+
+.card > div {
+  background: #fff; /*linear-gradient(to bottom right,#fff, var(--clr-scd-light));*/
+  flex: 1;
+  font-size: 0.75rem;
+  color: #000a;
+  padding: 0.1rem;
+}
+
+.card .editor {
+  padding: 0;
+}
+
+.editor pre,
+.editor code {
+  min-height: 350px;
+  max-height: 75vh;
+}
+

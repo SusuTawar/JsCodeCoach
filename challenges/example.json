@@ -1,0 +1,22 @@
+{
+  "title": "Product Negotiation",
+  "description": "You are marketing staff for a company, tasked with selling a product. if the client offer to buy lower than market price then decline, otherwise accept",
+  "task": "given the price client has to offer, decide to accept or not",
+  "input": "Two integer values, first value represent the client's offer, second value reprsent the market price",
+  "output": "String that says 'decline' or 'accept'",
+  "example": "input: 5000, 4000; \noutput: accept",
+  "functionName": "negotiate",
+  "paramsName": ["offer", "marketPrice"],
+  "testCase": {
+    "First Client": [{ "input": [5000, 4000], "output": "accept" }],
+    "Second Client": [
+      { "input": [9382, 2930], "output": "accept" },
+      { "input": [9373, 1302], "output": "accept" },
+      { "input": [3822, 3822], "output": "accept" },
+      { "input": [4928, 4929], "output": "decline" },
+      { "input": [1038, 1037], "output": "accept" }
+    ],
+    "Third Client": "example-3.txt",
+    "Fourth Client": "example-4.txt"
+  }
+}
