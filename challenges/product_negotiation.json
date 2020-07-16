@@ -16,7 +16,7 @@
       { "input": [4928, 4929], "output": "decline" },
       { "input": [1038, 1037], "output": "accept" }
     ],
-    "Third Client": "example-3.txt",
-    "Fourth Client": "example-4.txt"
+    "Third Client": "product_negotiation_3.txt",
+    "Fourth Client": "product_negotiation_4.txt"
   }
 }
